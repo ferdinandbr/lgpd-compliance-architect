@@ -1,0 +1,44 @@
+cpf:
+  regex: "\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}"
+  severity: high
+  description: "Brazilian individual taxpayer ID"
+
+rg:
+  regex: "\\b\\d{1,2}\\.\\d{3}\\.\\d{3}-[0-9Xx]\\b"
+  severity: high
+  description: "Brazilian national identity card number (dots mandatory between groups)"
+
+cnpj:
+  regex: "\\d{2}\\.\\d{3}\\.\\d{3}/\\d{4}-\\d{2}"
+  severity: medium
+  description: "Brazilian company registration number (personal for MEI/solo entrepreneurs)"
+
+email:
+  regex: "[A-Za-z0-9._%+\\-]+@[A-Za-z0-9.\\-]+\\.[A-Za-z]{2,}"
+  severity: medium
+  description: "Email address"
+
+phone:
+  regex: "\\(?\\d{2}\\)?\\s?9?\\d{4}-?\\d{4}"
+  severity: medium
+  description: "Brazilian phone number (landline or mobile)"
+
+cep:
+  regex: "\\d{5}-\\d{3}"
+  severity: low
+  description: "Brazilian postal code — alone it is low risk, but combined with name/CPF it becomes identifying"
+
+jwt:
+  regex: "eyJ[A-Za-z0-9\\-_]+\\.[A-Za-z0-9\\-_]+\\.[A-Za-z0-9\\-_]+"
+  severity: critical
+  description: "JSON Web Token — revoke immediately if found in code or logs"
+
+credit_card:
+  regex: "\\b(?:\\d[ -]?){13,16}\\b"
+  severity: critical
+  description: "Credit or debit card number — use PCI-compliant tokenization"
+
+api_key:
+  regex: "(?i)(api[_-]?key|secret|token)\\s*[:=]\\s*['\"]?[A-Za-z0-9\\-_]{16,}"
+  severity: critical
+  description: "Hardcoded API key, secret, or token"

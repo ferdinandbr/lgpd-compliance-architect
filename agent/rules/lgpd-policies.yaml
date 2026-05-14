@@ -1,0 +1,81 @@
+retention:
+  session_tokens: "session_end"
+  authentication_logs: "90d"
+  transaction_data: "5y"
+  marketing_data: "until_consent_revoked"
+  health_data: "regulatory_requirement"
+  biometric_data: "purpose_fulfilled_or_revoked"
+  general_personal_data: "2y"
+  audit_logs: "5y"
+
+sensitive_data_categories:
+  - health
+  - biometric
+  - racial_ethnic
+  - religious_beliefs
+  - political_opinion
+  - union_membership
+  - sexual_orientation
+  - genetic
+
+consent_required_for:
+  - marketing_communications
+  - behavioral_profiling
+  - third_party_data_sharing
+  - ai_model_training
+  - sensitive_data_processing
+
+legal_bases:
+  - id: consent
+    description: "Explicit, informed, specific, and freely given"
+    requires_documentation: true
+  - id: contract
+    description: "Processing strictly necessary to perform a contract with the data subject"
+    requires_documentation: true
+  - id: legal_obligation
+    description: "Processing required by applicable law or regulation"
+    requires_documentation: true
+  - id: vital_interests
+    description: "Protection of the life or physical safety of the data subject"
+    requires_documentation: true
+  - id: public_task
+    description: "Processing by public authorities for public interest"
+    requires_documentation: true
+  - id: legitimate_interest
+    description: "Legitimate interest of the controller, balanced against data subject rights"
+    requires_documentation: true
+    requires_pia: true
+
+data_subject_rights:
+  - access
+  - correction
+  - anonymization_or_deletion
+  - portability
+  - information_about_sharing
+  - revocation_of_consent
+  - objection_to_processing
+
+breach_notification:
+  anpd_deadline: "72h"
+  data_subject_notification: "without_undue_delay"
+  required_when:
+    - cpf_exposed
+    - health_data_exposed
+    - financial_data_exposed
+    - authentication_credentials_exposed
+    - sensitive_data_exposed
+
+data_transfer_international:
+  allowed_when:
+    - destination_country_provides_adequate_protection
+    - standard_contractual_clauses_signed
+    - anpd_authorization_obtained
+    - explicit_consent_given
+
+minimum_security_controls:
+  encryption_at_rest: required
+  encryption_in_transit: required
+  access_control: least_privilege
+  audit_logging: required
+  retention_enforcement: automated
+  vulnerability_management: required

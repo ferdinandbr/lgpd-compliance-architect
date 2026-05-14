@@ -1,0 +1,15 @@
+# Arquivos gerados localmente pelo instalador
+.claude/
+.cursor/
+.opencode/
+.windsurfrules
+.clinerules
+
+# Conteúdo que não faz parte do pacote publicável
+templates/
+scripts/
+
+# Config e lock
+.gitignore
+*.local.*
+package-lock.json

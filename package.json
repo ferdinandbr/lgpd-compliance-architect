@@ -1,0 +1,34 @@
+{
+  "name": "lgpd-compliance-architect",
+  "version": "1.0.0",
+  "description": "LGPD compliance architect agent for Claude Code, Cursor, Windsurf, VS Code Copilot, Cline and other AI coding tools",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "lgpd-agent": "./bin/cli.js",
+    "lgpd-compliance-architect": "./bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "agent/"
+  ],
+  "keywords": [
+    "lgpd",
+    "gdpr",
+    "privacy",
+    "compliance",
+    "pii",
+    "claude",
+    "cursor",
+    "windsurf",
+    "ai-agent"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@clack/prompts": "^0.9.0",
+    "picocolors": "^1.1.1"
+  }
+}

@@ -1,0 +1,71 @@
+cpf:
+  strategy: partial
+  keep: last_2_digits
+  example: "***.***.***-12"
+  code: |
+    def mask_cpf(cpf: str) -> str:
+        return f"***.***.***-{cpf[-2:]}" if len(cpf) >= 2 else "***"
+
+rg:
+  strategy: partial
+  keep: last_2_digits
+  example: "*.***.**-X2"
+  code: |
+    def mask_rg(rg: str) -> str:
+        return f"*.***.**-{rg[-2:]}" if len(rg) >= 2 else "***"
+
+cnpj:
+  strategy: partial
+  keep: last_4_digits
+  example: "**.***.***/0001-12"
+  code: |
+    def mask_cnpj(cnpj: str) -> str:
+        return f"**.***.***/****-{cnpj[-2:]}" if len(cnpj) >= 2 else "***"
+
+email:
+  strategy: partial
+  keep: first_char_and_domain
+  example: "f***@gmail.com"
+  code: |
+    def mask_email(email: str) -> str:
+        parts = email.split("@")
+        return f"{parts[0][0]}***@{parts[1]}" if len(parts) == 2 else "***"
+
+phone:
+  strategy: partial
+  keep: last_4_digits
+  example: "(**) *****-1234"
+  code: |
+    def mask_phone(phone: str) -> str:
+        digits = re.sub(r"\D", "", phone)
+        return f"(**) *****-{digits[-4:]}" if len(digits) >= 4 else "***"
+
+credit_card:
+  strategy: partial
+  keep: last_4_digits
+  example: "****-****-****-1234"
+  code: |
+    def mask_credit_card(card: str) -> str:
+        digits = re.sub(r"\D", "", card)
+        return f"****-****-****-{digits[-4:]}" if len(digits) >= 4 else "****"
+
+jwt:
+  strategy: truncate
+  keep: first_10_and_last_4
+  example: "eyJhbGciO...Xk9A"
+  note: "JWTs found in code or logs should be revoked, not just masked"
+
+api_key:
+  strategy: truncate
+  keep: first_8_chars
+  example: "sk-live-A..."
+  note: "Hardcoded API keys must be revoked and removed from version control"
+
+cep:
+  strategy: partial
+  keep: first_5_digits
+  example: "01310-***"
+  code: |
+    def mask_cep(cep: str) -> str:
+        digits = re.sub(r"\D", "", cep)
+        return f"{digits[:5]}-***" if len(digits) >= 5 else "***"

@@ -1,0 +1,21 @@
+# Dependências
+node_modules/
+
+# Arquivos gerados pelo instalador (auto-instalação local)
+.claude/
+.cursor/
+.opencode/
+.windsurfrules
+.clinerules
+
+# Build e pack
+*.tgz
+
+# Ambiente
+.env
+.env.*
+*.local
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,66 @@
+forbidden:
+  logging:
+    severity: high
+    patterns:
+      # JavaScript / TypeScript
+      - "console.log(user)"
+      - "console.log(user.password)"
+      - "console.log(user.cpf)"
+      - "console.log(req.body)"
+      - "console.log(request.body)"
+      - "console.dir(user)"
+      - "res.json(user)"
+      # Python
+      - "print(token)"
+      - "print(jwt)"
+      - "print(user.cpf)"
+      - "print(request.body)"
+      - "logger.info(req.body)"
+      - "logger.debug(user)"
+      - "logging.info(cpf)"
+      # Java / Spring
+      - "log.info(user.getCpf())"
+      - "System.out.println(senha)"
+      - "System.out.println(cpf)"
+
+  queries:
+    severity: high
+    patterns:
+      - "SELECT * FROM users"
+      - "SELECT * FROM clientes"
+      - "SELECT * FROM pessoas"
+      - "SELECT * FROM pacientes"
+      - "SELECT * FROM funcionarios"
+
+  hardcoded_secrets:
+    severity: critical
+    patterns:
+      - "password = \""
+      - "senha = \""
+      - "secret = \""
+      - "api_key = \""
+      - "SECRET_KEY = \""
+      - "JWT_SECRET = \""
+      - "DB_PASSWORD = \""
+      - "AWS_SECRET_ACCESS_KEY = \""
+
+  weak_crypto:
+    severity: critical
+    patterns:
+      - "hashlib.md5("
+      - "hashlib.sha1("
+      - "MD5.getInstance("
+      - "MessageDigest.getInstance(\"MD5\")"
+      - "MessageDigest.getInstance(\"SHA-1\")"
+      - "verify=False"
+      - "NODE_TLS_REJECT_UNAUTHORIZED=0"
+      - "AES.MODE_ECB"
+
+  pii_in_urls:
+    severity: high
+    patterns:
+      - "/cpf/"
+      - "?cpf="
+      - "?email="
+      - "?rg="
+      - "/email/"
