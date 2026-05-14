@@ -7,8 +7,8 @@
     "node": ">=18.0.0"
   },
   "bin": {
-    "lgpd-agent": "./bin/cli.js",
-    "lgpd-compliance-architect": "./bin/cli.js"
+    "lgpd-agent": "bin/cli.js",
+    "lgpd-compliance-architect": "bin/cli.js"
   },
   "files": [
     "bin/",
