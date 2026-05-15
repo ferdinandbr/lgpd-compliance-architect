@@ -1,8 +1,19 @@
 <p align="center">
-  <img src="logo.png" alt="LGPD Compliance Architect Logo" width="200">
+  <img src="https://i.imgur.com/JhkFxJZ.png" alt="LGPD Compliance Architect Logo" width="200">
 </p>
 
 <h1 align="center">LGPD Compliance Architect</h1>
+<p align="center">
+  <a href="https://www.npmjs.com/package/lgpd-compliance-architect">
+    <img src="https://img.shields.io/npm/v/lgpd-compliance-architect.svg?style=flat-square" alt="npm version">
+  </a>
+  <a href="https://www.npmjs.com/package/lgpd-compliance-architect">
+    <img src="https://img.shields.io/npm/dm/lgpd-compliance-architect.svg?style=flat-square" alt="npm downloads">
+  </a>
+  <a href="https://github.com/ferdinandbr/lgpd-compliance-architect/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/ferdinandbr/lgpd-compliance-architect.svg?style=flat-square" alt="license">
+  </a>
+</p>
 
 
 Agente de IA especializado em conformidade com a **Lei Geral de Proteção de Dados (LGPD — Lei 13.709/2018)**. Detecta exposição de dados pessoais, aplica Privacy by Design e audita backend, frontend, APIs, bancos de dados e integrações com IA.
