@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "LGPD compliance architect agent for Claude Code, Cursor, Windsurf, VS Code Copilot, Cline and other AI coding tools",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferdinandbr/lgpd-compliance-architect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ferdinandbr/lgpd-compliance-architect/issues"
+  },
+  "homepage": "https://github.com/ferdinandbr/lgpd-compliance-architect#readme",
   "engines": {
     "node": ">=18.0.0"
   },
