@@ -55,6 +55,11 @@ const TOOLS = [
     label: 'OpenCode',
     hint: 'agente em .opencode/agents/',
   },
+  {
+    value: 'antigravity',
+    label: 'Antigravity (Google)',
+    hint: 'skill em .agents/skills/lgpd-compliance-architect/',
+  },
 ];
 
 // ─── Flags ───────────────────────────────────────────────────────────────────
@@ -97,6 +102,10 @@ function resolvedPath(tool, scope) {
       return global
         ? join(homedir(), '.config', 'opencode', 'agents', 'lgpd-compliance-architect.md')
         : join(CWD, '.opencode', 'agents', 'lgpd-compliance-architect.md');
+    case 'antigravity':
+      return global
+        ? join(homedir(), '.gemini', 'antigravity', 'skills', 'lgpd-compliance-architect', 'SKILL.md')
+        : join(CWD, '.agents', 'skills', 'lgpd-compliance-architect', 'SKILL.md');
     default:
       return '';
   }
@@ -178,6 +187,7 @@ async function main() {
         if (scope === 'global') {
           if (t.value === 'claude') return { ...t, hint: '~/.claude/agents/lgpd-compliance-architect.md' };
           if (t.value === 'opencode') return { ...t, hint: '~/.config/opencode/agents/lgpd-compliance-architect.md' };
+          if (t.value === 'antigravity') return { ...t, hint: '~/.gemini/antigravity/skills/lgpd-compliance-architect/SKILL.md' };
         }
         return t;
       }),

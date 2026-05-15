@@ -91,6 +91,9 @@ export function compile(pkgRoot) {
     // Cursor: MDC format with alwaysApply frontmatter
     cursor: buildCursor(fullBody),
 
+    // Antigravity (Google): skill format for .agents/skills/
+    antigravity: buildAntigravity(fullBody),
+
     // Generic: plain markdown (Windsurf, VS Code Copilot, Cline)
     generic: `# LGPD Compliance Architect\n\n${fullBody}`,
   };
@@ -99,6 +102,16 @@ export function compile(pkgRoot) {
 function buildClaudeCode(originalAgentMd, fullBody) {
   const { frontmatter } = parseFrontmatter(originalAgentMd);
   return `---\n${frontmatter}\n---\n\n${fullBody}`;
+}
+
+function buildAntigravity(fullBody) {
+  return `---
+name: lgpd-compliance-architect
+description: Expert LGPD and privacy compliance architect for backend, frontend, APIs, AI systems, and databases. Detects PII exposure, enforces privacy-by-design and LGPD (Lei 13.709/2018) compliance.
+version: 1.0.0
+---
+
+${fullBody}`;
 }
 
 function buildOpenCode(fullBody) {
