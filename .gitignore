@@ -5,6 +5,7 @@ node_modules/
 .claude/
 .cursor/
 .opencode/
+.agents/
 .windsurfrules
 .clinerules
 

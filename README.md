@@ -63,6 +63,7 @@ npx lgpd-compliance-architect --list
 |---|---|---|---|
 | `claude` | Claude Code | `.claude/agents/lgpd-compliance-architect.md` | `~/.claude/agents/lgpd-compliance-architect.md` |
 | `opencode` | OpenCode | `.opencode/agents/lgpd-compliance-architect.md` | `~/.config/opencode/agents/lgpd-compliance-architect.md` |
+| `antigravity` | Antigravity (Google) | `.agents/skills/lgpd-compliance-architect/SKILL.md` | `~/.gemini/antigravity/skills/lgpd-compliance-architect/SKILL.md` |
 | `cursor` | Cursor | `.cursor/rules/lgpd-compliance.mdc` | — |
 | `windsurf` | Windsurf | `.windsurfrules` | — |
 | `vscode` | VS Code Copilot | `.github/copilot-instructions.md` | — |

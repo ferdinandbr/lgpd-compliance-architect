@@ -43,6 +43,8 @@ function installTool(tool, scope, cwd, compiled) {
       return installAppend(join(cwd, '.clinerules'), compiled.generic);
     case 'opencode':
       return installOpenCode(cwd, global, compiled);
+    case 'antigravity':
+      return installAntigravity(cwd, global, compiled);
     default:
       throw new Error(`Ferramenta desconhecida: ${tool}`);
   }
@@ -103,6 +105,19 @@ function installOpenCode(cwd, global, compiled) {
 
   const dest = join(agentsDir, 'lgpd-compliance-architect.md');
   writeFileSync(dest, compiled.openCode, 'utf-8');
+
+  return dest;
+}
+
+function installAntigravity(cwd, global, compiled) {
+  const skillDir = global
+    ? join(homedir(), '.gemini', 'antigravity', 'skills', 'lgpd-compliance-architect')
+    : join(cwd, '.agents', 'skills', 'lgpd-compliance-architect');
+
+  ensureDir(skillDir);
+
+  const dest = join(skillDir, 'SKILL.md');
+  writeFileSync(dest, compiled.antigravity, 'utf-8');
 
   return dest;
 }
